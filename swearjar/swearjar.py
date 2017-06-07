@@ -1,5 +1,5 @@
 """
-Swear Jar plot generator for the ESDLab.
+Swear Jar plot generator.
 
 by: James Cook
 """

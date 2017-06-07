@@ -1,17 +1,3 @@
-# ---------------------------------------------------------------------------
-#
-#  ExampleGUI: An example GUI for the ESDLab
-#
-#  Copyright (C) 2017 by Energy Systems Design Laboratory, University of Alberta
-#
-#  This software is distributed under the MIT License.
-#  For more information, see LICENSE.txt file
-#
-#  - Class: GUITab
-#  - Description: Creates a baseline GUI Tab for the GUIWindow class.
-#  - Developers: J. Cook
-#
-# ---------------------------------------------------------------------------
 """Creates the base guiTab window for the guiWindow class."""
 
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel

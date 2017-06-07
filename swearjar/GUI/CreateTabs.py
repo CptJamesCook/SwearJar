@@ -1,17 +1,3 @@
-# ---------------------------------------------------------------------------
-#
-#  ExampleGUI: An example GUI for the ESDLab
-#
-#  Copyright (C) 2017 by Energy Systems Design Laboratory, University of Alberta
-#
-#  This software is distributed under the MIT License.
-#  For more information, see LICENSE.txt file
-#
-#  - Class: CreateTabs
-#  - Description: Takes in, and creates the tabs for the main window.
-#  - Developers: J. Cook
-#
-# ---------------------------------------------------------------------------
 """Sets the tabs for the MainWindow."""
 from PyQt5.QtWidgets import QTabWidget
 from examplegui.GUI.Tabs import (tabEx1, tabEx2)

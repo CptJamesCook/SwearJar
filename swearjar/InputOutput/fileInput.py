@@ -1,18 +1,3 @@
-# ---------------------------------------------------------------------------
-#
-#  ExampleGUI: An example GUI for the ESDLab.
-#
-#  Copyright (C) 2017 by Energy Systems Design Laboratory, University of Alberta
-#
-#  This software is distributed under the MIT License.
-#  For more information, see LICENSE.txt file
-#
-#  - Class: fileInput
-#  - Description: Reads initial conditions from a file and
-#                 outputs to a dictionary.
-#  - Developers: J. Cook
-#
-# ---------------------------------------------------------------------------
 """Reads initial conditions from a file and outputs to a dictionary."""
 from examplegui.InputOutput.ParamToLabel import labelToParam_MD
 

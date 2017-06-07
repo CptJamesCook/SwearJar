@@ -1,17 +1,3 @@
-# ---------------------------------------------------------------------------
-#
-#  ExampleGUI: An example GUI for the ESDLab.
-#
-#  Copyright (C) 2017 by Energy Systems Design Laboratory, University of Alberta
-#
-#  This software is distributed under the MIT License.
-#  For more information, see LICENSE.txt file
-#
-#  - Class: GUIWindow
-#  - Description: Creates the GUI window.
-#  - Developers: J. Cook
-#
-# ---------------------------------------------------------------------------
 """Creates the main GUI window."""
 
 from PyQt5.QtWidgets import (QMainWindow, QHBoxLayout, QVBoxLayout,

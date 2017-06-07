@@ -1,17 +1,3 @@
-# ---------------------------------------------------------------------------
-#
-#  ExampleGUI: An example GUI for the ESDLab
-#
-#  Copyright (C) 2017 by Energy Systems Design Laboratory, University of Alberta
-#
-#  This software is distributed under the MIT License.
-#  For more information, see LICENSE.txt file
-#
-#  - Class: MyEquations
-#  - Description: This is where my equations/things go.
-#  - Developers: J. Cook
-#
-# ---------------------------------------------------------------------------
 """This is where my equations/things go."""
 
 

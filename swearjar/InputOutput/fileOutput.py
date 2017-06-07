@@ -1,17 +1,3 @@
-# ---------------------------------------------------------------------------
-#
-#  ExampleGUI: An example GUI for the ESDLab.
-#
-#  Copyright (C) 2017 by Energy Systems Design Laboratory, University of Alberta
-#
-#  This software is distributed under the MIT License.
-#  For more information, see LICENSE.txt file
-#
-#  - Class: fileOutput
-#  - Description: Contains functions for writing to an output file.
-#  - Developers: J. Cook
-#
-# ---------------------------------------------------------------------------
 """Outputs the solved equations and the initial conditions to a file."""
 from examplegui.InputOutput.HeadingToParams import _dict as headToParams
 from examplegui.InputOutput.ParamToLabel import paramToLabel_MD
