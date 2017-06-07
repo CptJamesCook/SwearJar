@@ -3,8 +3,8 @@
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
-from examplegui.GUI.fieldLineEdit import fieldLineEdit
-from examplegui.InputOutput.ParamToLabel import paramToLabel
+from swearjar.GUI.fieldLineEdit import fieldLineEdit
+from swearjar.InputOutput.ParamToLabel import paramToLabel
 from functools import partial
 
 
@@ -29,7 +29,7 @@ class GUITab(QWidget):
         self.rightColumn = QVBoxLayout()
 
         self.picture = QLabel()
-        pixmap = QPixmap('examplegui/GUI/img/ESDL_logo.jpg')
+        pixmap = QPixmap('swearjar/GUI/img/ESDL_logo.jpg')
         self.picture.setPixmap(pixmap)
 
         self.params = paramsTuple
@@ -97,7 +97,7 @@ class GUITab(QWidget):
 
     def changePic(self, name):
         """Change the picture on the tab."""
-        pixmap = QPixmap('examplegui/GUI/img/ESDL_logo.jpg')
+        pixmap = QPixmap('swearjar/GUI/img/ESDL_logo.jpg')
         self.picture.setPixmap(pixmap)
 
 

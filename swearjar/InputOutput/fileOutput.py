@@ -1,6 +1,6 @@
 """Outputs the solved equations and the initial conditions to a file."""
-from examplegui.InputOutput.HeadingToParams import _dict as headToParams
-from examplegui.InputOutput.ParamToLabel import paramToLabel_MD
+from swearjar.InputOutput.HeadingToParams import _dict as headToParams
+from swearjar.InputOutput.ParamToLabel import paramToLabel_MD
 
 
 class fileOutput(object):

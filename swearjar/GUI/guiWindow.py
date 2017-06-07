@@ -5,13 +5,13 @@ from PyQt5.QtWidgets import (QMainWindow, QHBoxLayout, QVBoxLayout,
                              QAction)
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIcon
-from examplegui.GUI.CreateTabs import CreateTabs
-from examplegui.InputOutput import fileInput, fileOutput
-from examplegui.myEquations import myEquations
+from swearjar.GUI.CreateTabs import CreateTabs
+from swearjar.InputOutput import fileInput, fileOutput
+from swearjar.myEquations import myEquations
 
 
 class GUIWindow(QMainWindow):
-    """Creates the ExampleGUI GUIWindow."""
+    """Creates the swearjar GUIWindow."""
 
     def __init__(self, initParams):
         """Initialize the window class, then its super class."""
@@ -28,8 +28,8 @@ class GUIWindow(QMainWindow):
         self.createMenuBar()
 
         self.showMaximized()
-        self.setWindowTitle('ExampleGUI')
-        self.setWindowIcon(QIcon('examplegui/GUI/img/ESDL_logo.jpg'))
+        self.setWindowTitle('SwearJar')
+        # self.setWindowIcon(QIcon('swearjar/GUI/img/ESDL_logo.jpg'))
         self.show()
 
     def createCentralWidget(self):

@@ -1,5 +1,5 @@
 """Contains the Drift Eliminator constants tab."""
-from examplegui.GUI.Tabs.guiTab import GUITab
+from swearjar.GUI.Tabs.guiTab import GUITab
 
 
 class tabEx1(GUITab):

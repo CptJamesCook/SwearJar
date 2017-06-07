@@ -1,5 +1,5 @@
 """Reads initial conditions from a file and outputs to a dictionary."""
-from examplegui.InputOutput.ParamToLabel import labelToParam_MD
+from swearjar.InputOutput.ParamToLabel import labelToParam_MD
 
 
 class fileInput(object):

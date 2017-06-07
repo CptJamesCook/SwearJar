@@ -1,6 +1,6 @@
 """Sets the tabs for the MainWindow."""
 from PyQt5.QtWidgets import QTabWidget
-from examplegui.GUI.Tabs import (tabEx1, tabEx2)
+from swearjar.GUI.Tabs import (tabEx1, tabEx2)
 
 
 class CreateTabs(QTabWidget):
