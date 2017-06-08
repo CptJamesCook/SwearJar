@@ -1,5 +1,4 @@
 """Reads initial conditions from a file and outputs to a dictionary."""
-from swearjar.InputOutput.ParamToLabel import labelToParam_MD
 
 
 class fileInput(object):
@@ -7,25 +6,27 @@ class fileInput(object):
 
     def updateDict(initParams, filename=None):
         """Update and return the initial parameter dictionary from a file."""
-        updatedDict = {}
+        labelToParam_MD = initParams.labelToParam_MD()
         if filename is not None:
             with open(filename) as f:
                 content = f.readlines()
-            # remove white space
+            # remove new line char
             content = [x.strip('\n') for x in content]
 
             for itm in content:
-                for key in labelToParam_MD.keys():
-                    if itm.find(key) == 0:
-                        stripedStr = itm[len(key):]
-                        stripedStr = stripedStr.strip('*')
+                for label in initParams.labels_MD():
+                    if itm.find(label) == 0:
+                        stripedStr = itm[len(label):]
+
+                        val = stripedStr.strip('*')
+                        param = labelToParam_MD[label]
+
                         try:
-                            updatedDict[labelToParam_MD[key]] = float(stripedStr)
+                            initParams[param] = float(val)
                         except ValueError:
-                            updatedDict[labelToParam_MD[key]] = stripedStr
+                            initParams[param] = val
                         break
 
-        initParams.update(updatedDict)
         return initParams
 
 

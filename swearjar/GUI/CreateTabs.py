@@ -11,8 +11,8 @@ class CreateTabs(QTabWidget):
         super().__init__()
 
         self.initParams = initParams
-        self.addTab(tabEx1(initParams), "Tab Ex1")
-        self.addTab(tabEx2(initParams), "Tab Ex2")
+        self.addTab(tabEx1(self.initParams), "Tab Ex1")
+        self.addTab(tabEx2(self.initParams), "Tab Ex2")
 
     def getInput(self):
         """

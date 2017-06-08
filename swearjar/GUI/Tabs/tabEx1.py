@@ -7,6 +7,6 @@ class tabEx1(GUITab):
 
     def __init__(self, initParams):
         """Initialize self and parent."""
-        paramsTuple = ('Sorp', 'Merp', 'Doot', 'banana')
-        super().__init__(initParams, paramsTuple)
-        self.makeLayout(initParams)
+        super().__init__(initParams)
+        heading = 'Example Tab 1'
+        self.makeLayout(heading)

@@ -4,14 +4,13 @@ from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
 from swearjar.GUI.fieldLineEdit import fieldLineEdit
-from swearjar.InputOutput.ParamToLabel import paramToLabel
 from functools import partial
 
 
 class GUITab(QWidget):
     """Creates a GUITab for the GUIWindow."""
 
-    def __init__(self, initDict, paramsTuple):
+    def __init__(self, initParams):
         """Initialize the itself, then its super class."""
         super().__init__()
 
@@ -26,15 +25,16 @@ class GUITab(QWidget):
 
         self.mainLayout = QHBoxLayout()
         self.leftColumn = QVBoxLayout()
+        self.leftColumn.setAlignment(Qt.AlignRight)
         self.rightColumn = QVBoxLayout()
 
         self.picture = QLabel()
-        pixmap = QPixmap('swearjar/GUI/img/ESDL_logo.jpg')
-        self.picture.setPixmap(pixmap)
+        # pixmap = QPixmap('coolit/GUI/img/CoolingTowerWet-Default.png')
+        # self.picture.setPixmap(pixmap)
 
-        self.params = paramsTuple
+        self.initParams = initParams
 
-    def makeLayout(self, initDict):
+    def makeLayout(self, heading):
         """
         Make the layout for window and set it.
 
@@ -42,13 +42,16 @@ class GUITab(QWidget):
         -------
         * leftColumn: Refers to the column next to the image.
                       Contains the labelFieldLayout.
+        * rightColumn: Refers to the column containing the image.
         * labelFieldLayout: Contains the label and field to be filled
-                            in by the user.
+                            in by the user. It is composed of two column's,
+                            one for the label, and another for the field.
         * mainLayout: Contains all sub layouts (leftColumn, labelFieldLayout)
                       and widgets for the tab.
         """
-        for param in self.params:
-            self.addRow(param, initDict[param])
+        params = self.initParams.getParamsFromHeading(heading)
+        for param in params:
+            self.addRow(param, self.initParams[param])
 
         self.leftColumn.addStretch(1)
         self.leftColumn.addLayout(self.labelFieldLayout)
@@ -62,17 +65,16 @@ class GUITab(QWidget):
         self.mainLayout.addLayout(self.leftColumn)
         self.mainLayout.addStretch(1)
         self.mainLayout.addLayout(self.rightColumn)
-        self.mainLayout.addStretch(1)
 
         self.setLayout(self.mainLayout)
 
     def addRow(self, param, val):
         """Add a row to the widget."""
-        labelWidget = QLabel(paramToLabel[param])
+        labelWidget = QLabel(self.initParams.getlabel(param))
         labelWidget.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
 
-        fieldWidget = fieldLineEdit()
-        fieldWidget.setValue(str(val))
+        fieldWidget = fieldLineEdit(name=param)
+        fieldWidget.setValue(val)
         fieldWidget.changePic.connect(partial(self.changePic,
                                               fieldWidget.name))
 
@@ -83,22 +85,21 @@ class GUITab(QWidget):
 
     def getInput(self):
         """Take the values from the input fields."""
-        returnDict = {}
         for param, widget in self.paramToWidget.items():
-            returnDict[param] = widget.value()
-
-        return returnDict
+            self.initParams[param] = widget.value()
+        return self.initParams
 
     def updateInput(self, updateDict):
         """Update the fields to display values according to a dictionary."""
         for param, widget in self.paramToWidget.items():
             val = updateDict[param]
-            widget.setText(str(val))
+            widget.setValue(val)
 
     def changePic(self, name):
         """Change the picture on the tab."""
-        pixmap = QPixmap('swearjar/GUI/img/ESDL_logo.jpg')
-        self.picture.setPixmap(pixmap)
+        # pixmap = QPixmap('coolit/GUI/img/CoolingTowerWet-Default.png')
+        # self.picture.setPixmap(pixmap)
+        pass
 
 
 if __name__ == '__main__':

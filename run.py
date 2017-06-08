@@ -1,6 +1,6 @@
 """Run the main functions of the program."""
 import sys
-from swearjar.InputOutput import initParams
+from swearjar.InitialParams import initParams
 from swearjar.GUI.guiWindow import GUIWindow
 from PyQt5.QtWidgets import QApplication
 

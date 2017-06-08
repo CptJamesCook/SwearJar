@@ -18,4 +18,4 @@ class myEquations(object):
 
     def solve(self):
         """I solve things."""
-        return ["Results1", "Results2", "Results3"]
+        return ["Results1", "Results2", "Results3", "Result4"]
